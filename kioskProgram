@@ -1,0 +1,29 @@
+package com.ohgiraffers.Kiosk;
+
+public abstract class kioskProgram { // 추상클래스 runKiosk 사용, userPay에 overriding
+    public abstract void selectEatin();
+
+    public abstract int selectMenu(int menu); // 결제 금액 반환용 메소드
+
+    public abstract boolean isOn(); // 상태 확인 메소드 추가
+
+    public abstract void setOn(boolean isOn); // 상태 변경 메소드 추가
+
+    public void payWithWhat(String payments, int amount) {
+        // 결제 방식 처리 로직
+        switch (payments) {
+            case "card":
+                System.out.println("카드로 " + amount + "원 결제하였습니다.");
+                break;
+            case "cash":
+                System.out.println("현금으로 " + amount + "원 결제하였습니다.");
+                break;
+            case "barcode":
+                System.out.println("간편결제로 " + amount + "원 결제하였습니다.");
+                break;
+            default:
+                System.out.println("잘못된 결제 방식입니다. 다시 시도해주세요.");
+                break;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+package com.ohgiraffers.User;
+
+import com.ohgiraffers.Kiosk.kioskProgram;
+
+public class userPay extends kioskProgram {
+    private boolean isOn = false; // 상태 관리 변수
+
+    @Override
+    public void selectEatin() {
+        if (!isOn) {
+            System.out.println("선택해주세요 : 먹고가기 / 포장하기");
+        }
+    }
+
+    @Override
+    public int selectMenu(int menu) {
+        // 메뉴 선택 및 결제 금액 반환
+        if (menu == 1) {
+            System.out.println("비빔막국수는 10000원입니다.");
+            return 10000;
+        } else if (menu == 2) {
+            System.out.println("물막국수는 11000원입니다.");
+            return 11000;
+        } else {
+            System.out.println("저희 매장은 물/비빔 두 메뉴만 제공합니다.");
+            return 0;
+        }
+    }
+
+    @Override
+    public void setOn(boolean isOn) {
+        this.isOn = isOn; // 상태 변경
+    }
+
+    @Override
+    public boolean isOn() {
+        return this.isOn; // 상태 반환
+    }
+
+    @Override
+    public void payWithWhat(String payments, int amount) {
+        super.payWithWhat(payments, amount);
+    }
+}

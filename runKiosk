@@ -1,0 +1,50 @@
+package com.ohgiraffers.Run;
+
+import com.ohgiraffers.User.userPay;
+import java.util.Scanner;
+
+public class runKiosk {
+    public static void main(String[] args) {
+        userPay kiosk = new userPay(); // userPay 객체 생성
+        Scanner sc = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("====어서오십시오. 인제내린촌 막국수입니다.=====");
+            System.out.print("화면을 \'touch\'하거나 \'quit\'해주세요: ");
+            String touch = sc.nextLine();
+
+            if (touch.equals("touch")) {
+                kiosk.setOn(true); // userPay의 상태를 변경
+                kiosk.selectEatin(); // 먹고가기/포장하기 선택
+
+                // 메뉴 선택
+                System.out.println("메뉴를 선택해주세요 (1: 비빔막국수, 2: 물막국수): ");
+                int menu = sc.nextInt();
+                int amount = kiosk.selectMenu(menu); // 메뉴 선택 및 결제 금액 반환
+
+                if (amount > 0) {
+                    // 결제 방식 선택
+                    sc.nextLine(); // 버퍼 클리어
+                    System.out.print("결제 방식을 선택해주세요 : card, cash, barcode = ");
+                    String paymentMethod = sc.nextLine();
+                    kiosk.payWithWhat(paymentMethod, amount); // 결제 메소드 호출
+                    break;
+                } if (amount == 0) {
+                    System.out.println("메뉴를 선택해주세요 (1: 비빔막국수, 2: 물막국수): ");
+                    int menu2 = sc.nextInt();
+                    amount = kiosk.selectMenu(menu2);
+                    sc.nextLine(); // 버퍼 클리어
+                    System.out.print("결제 방식을 선택해주세요 : card, cash, barcode = ");
+                    String paymentMethod = sc.nextLine();
+                    kiosk.payWithWhat(paymentMethod, amount);
+                    break;
+                }
+            } else if (touch.equals("quit")) {
+                System.out.println("방문 감사합니다. 다음에 또 뵙겠습니다.");
+                break;
+            } else {
+                System.out.println("잘못된 입력입니다. 화면을 터치해주세요.");
+            }
+        }
+    }
+}

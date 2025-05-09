@@ -1,8 +1,8 @@
 package com.ohgiraffers.User;
 
-import com.ohgiraffers.Kiosk.kioskProgram;
+import com.ohgiraffers.Kiosk.KioskProgram;
 
-public class userPay extends kioskProgram {
+public class UserPay extends KioskProgram {
     private boolean isOn = false; // 상태 관리 변수
 
     @Override

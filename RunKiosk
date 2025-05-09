@@ -3,7 +3,7 @@ package com.ohgiraffers.Run;
 import com.ohgiraffers.User.userPay;
 import java.util.Scanner;
 
-public class runKiosk {
+public class RunKiosk {
     public static void main(String[] args) {
         userPay kiosk = new userPay(); // userPay 객체 생성
         Scanner sc = new Scanner(System.in);

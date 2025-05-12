@@ -1,5 +1,6 @@
 # practicingJAVA
 **IS-A relation 재정의해서 코드 수정하기(5/10 22:24)**
+**MenuProgram IS A KioskProgram : 패키지 & 클래스 이름 수정, 코드 수정 완료(5/12 10:13)**
 
 ### 프로그램 개요 : 사용자가 막국수집에서 결제하는 키오스크 프로그램
 

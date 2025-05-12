@@ -1,8 +1,13 @@
-package com.ohgiraffers.Kiosk;
+package com.ohgiraffers.kiosk;
 
-public abstract class KioskProgram { // 추상클래스 runKiosk 사용, userPay에 overriding
-    public abstract void selectEatin();
+public abstract class KioskProgram { // 추상클래스 runKiosk 사용, userPay에 overriding 해줌
+    private boolean isOn = false; // 상태 관리 변수
 
+    public void selectEatin() {
+        if (!isOn) {
+            System.out.println("선택해주세요 : 먹고가기 / 포장하기");
+        }
+    }
     public abstract int selectMenu(int menu); // 결제 금액 반환용 메소드
 
     public abstract boolean isOn(); // 상태 확인 메소드 추가

@@ -43,3 +43,7 @@ _키오스크가 해야하는 일(키오스크가 수신할 수 있는 메세지
 3) 메뉴 선택 및 확인
 4) 입력한 수단으로 결제
 
+-----
+**프로그램 실행예시**
+
+![image](https://github.com/user-attachments/assets/ef23977c-f1a5-4251-a02f-16ea8e468daf)

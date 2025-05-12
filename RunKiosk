@@ -1,11 +1,11 @@
-package com.ohgiraffers.Run;
+package com.ohgiraffers.run;
 
-import com.ohgiraffers.User.userPay;
+import com.ohgiraffers.menuProgram.MenuProgram;
 import java.util.Scanner;
 
 public class RunKiosk {
     public static void main(String[] args) {
-        userPay kiosk = new userPay(); // userPay 객체 생성
+        MenuProgram kiosk = new MenuProgram(); // userPay 객체 생성
         Scanner sc = new Scanner(System.in);
 
         while (true) {
@@ -22,6 +22,12 @@ public class RunKiosk {
                 int menu = sc.nextInt();
                 int amount = kiosk.selectMenu(menu); // 메뉴 선택 및 결제 금액 반환
 
+                 /* do {
+                    sc.nextLine(); // 버퍼 클리어
+                    System.out.print("결제 방식을 선택해주세요 : card, cash, barcode = ");
+                    String paymentMethod = sc.nextLine();
+                    kiosk2.payWithWhat(paymentMethod, amount);
+                } while (amount == 0); */
                 if (amount > 0) {
                     // 결제 방식 선택
                     sc.nextLine(); // 버퍼 클리어

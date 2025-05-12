@@ -1,16 +1,13 @@
-package com.ohgiraffers.User;
+package com.ohgiraffers.menuProgram;
 
-import com.ohgiraffers.Kiosk.KioskProgram;
+import com.ohgiraffers.kiosk.KioskProgram;
 
-public class UserPay extends KioskProgram {
-    private boolean isOn = false; // 상태 관리 변수
+public class MenuProgram extends KioskProgram {
+// MenuProgram is a KioskProgram
+    private boolean isOn = false;
 
     @Override
-    public void selectEatin() {
-        if (!isOn) {
-            System.out.println("선택해주세요 : 먹고가기 / 포장하기");
-        }
-    }
+    public void selectEatin() {}
 
     @Override
     public int selectMenu(int menu) {
@@ -39,6 +36,7 @@ public class UserPay extends KioskProgram {
 
     @Override
     public void payWithWhat(String payments, int amount) {
+        // super.를 통해 부모 클래스의 payWithWhat 메소드를 그대로 사용하거나 추가 로직을 구현할 수 있다.
         super.payWithWhat(payments, amount);
     }
 }
